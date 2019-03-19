@@ -49,6 +49,7 @@ namespace NETCoreTest
 
             app.UseMvc();
 
+            //Swagger显示控制
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
