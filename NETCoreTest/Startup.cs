@@ -27,7 +27,7 @@ namespace NETCoreTest
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //Swagger文档生成参数配置
+            //添加Swagger文档生成参数配置
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
@@ -54,6 +54,7 @@ namespace NETCoreTest
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "NETCoreTest");
+                options.InjectJavascript("/Scripts/swagger.js");
             });
         }
     }

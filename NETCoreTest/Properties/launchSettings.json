@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "swagger",    //配置默认页
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

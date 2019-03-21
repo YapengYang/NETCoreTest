@@ -11,6 +11,10 @@ namespace NETCoreTest.Controllers
     public class ValuesController : ControllerBase
     {
         // GET api/values
+        /// <summary>
+        /// 测试API
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -18,6 +22,11 @@ namespace NETCoreTest.Controllers
         }
 
         // GET api/values/5
+        /// <summary>
+        /// 单条数据查询
+        /// </summary>
+        /// <param name="id">主键ID</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
@@ -37,6 +46,10 @@ namespace NETCoreTest.Controllers
         }
 
         // DELETE api/values/5
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        /// <param name="id">主键ID</param>
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
