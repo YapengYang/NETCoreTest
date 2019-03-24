@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NETCore.DB;
 
 namespace NETCoreTest
 {
@@ -26,6 +28,11 @@ namespace NETCoreTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+
+            // 注意：一定要加 sslmode = none
+            var connection = Configuration.GetConnectionString("Default");
+            services.AddDbContext<NETCoreDBContext>(options => options.UseMySQL(connection));
 
             //添加Swagger文档生成参数配置
             services.AddSwaggerGen(options =>

@@ -3,13 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NETCore.DB;
 
 namespace NETCoreTest.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    /// 基础测试类
+    /// </summary>
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        /// <summary>
+        /// 数据库上下文
+        /// </summary>
+        public readonly NETCoreDBContext _db;
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="db"></param>
+        public ValuesController(NETCoreDBContext db)
+        {
+            _db = db;
+        }
+
         // GET api/values
         /// <summary>
         /// 测试API
@@ -54,5 +72,17 @@ namespace NETCoreTest.Controllers
         public void Delete(int id)
         {
         }
+
+        /// <summary>
+        /// 获取所有产品
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<List<product>> GetAllProduct()
+        {
+            var lst = _db.product.ToList();
+            return lst;
+        }
+
     }
 }
