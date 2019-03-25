@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using SqlSugar;
 
-namespace Sugar.Enties
+namespace NETCoreTest.Enties
 {
     ///<summary>
     ///

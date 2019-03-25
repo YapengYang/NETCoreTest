@@ -33,6 +33,7 @@ namespace NETCoreTest
             // 注意：一定要加 sslmode = none
             var connection = Configuration.GetConnectionString("Default");
             services.AddDbContext<NETCoreDBContext>(options => options.UseMySQL(connection));
+            
 
             //添加Swagger文档生成参数配置
             services.AddSwaggerGen(options =>

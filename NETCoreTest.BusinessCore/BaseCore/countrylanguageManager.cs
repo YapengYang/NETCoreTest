@@ -1,4 +1,4 @@
-﻿using Sugar.Enties;
+﻿using NETCoreTest.Enties;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
