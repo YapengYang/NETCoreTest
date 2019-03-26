@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NETCoreTest.Enties;
+using NETCoreTest.Enties.wmw;
 
 namespace NETCoreTest.Controllers
 {
@@ -36,7 +36,8 @@ namespace NETCoreTest.Controllers
         [HttpGet]
         public ActionResult<List<country>> GetCityByName(string _inputName)
         {
-            var lst = _countrydb.GetList().Where(p => p.Name == _inputName).ToList();
+            var lst = _countrydb.GetList().Where(p => p.Name == _inputName)
+                .ToList();
             return lst;
         }
 

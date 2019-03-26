@@ -28,8 +28,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NETCore.DB\NETCore.DB.csproj" />
-    <ProjectReference Include="..\NETCoreTest.BusinessCore\NETCoreTest.BusinessCore.csproj" />
-    <ProjectReference Include="..\NETCoreTest.Enties\NETCoreTest.Enties.csproj" />
+    <ProjectReference Include="..\NETCoreTest.BusinessCore.wmw\NETCoreTest.BusinessCore.wmw.csproj" />
+    <ProjectReference Include="..\NETCoreTest.Enties.wmw\NETCoreTest.Enties.wmw.csproj" />
   </ItemGroup>
 
 </Project>

@@ -78,9 +78,9 @@ namespace NETCoreTest.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<List<product>> GetAllProduct()
+        public ActionResult<List<language>> GetAllProduct()
         {
-            var lst = _db.product.ToList();
+            var lst = _db.language.ToList();
             return lst;
         }
 

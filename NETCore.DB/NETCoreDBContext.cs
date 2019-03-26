@@ -13,7 +13,7 @@ namespace NETCore.DB
 
         }
 
-        public DbSet<product> product { get; set; }
+        public DbSet<language> language { get; set; }
 
     }
 }
