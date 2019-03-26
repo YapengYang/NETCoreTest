@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace NETCore.DB
 {
     /// <summary>
@@ -12,10 +14,14 @@ namespace NETCore.DB
         {
         }
 
+        
         private System.Byte _language_id;
+
         /// <summary>
-        /// 
+        /// 每个表对应的实体必须指定主键属性
         /// </summary>
+        [Key]
+        [Required]
         public System.Byte language_id { get { return this._language_id; } set { this._language_id = value; } }
 
         private System.String _name;
