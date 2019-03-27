@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using SqlSugar;
@@ -112,6 +113,7 @@ namespace NETCoreTest.Enties.wmw
         /// Default:
         /// Nullable:False
         /// </summary>           
+        [Key]
         [SugarColumn(IsPrimaryKey = true)]
         public string Code { get; set; }
 

@@ -90,6 +90,12 @@ namespace NETCoreTest
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "NETCoreTest");
                 options.InjectJavascript("/Scripts/swagger.js");
             });
+
+            app.Run(ctx =>
+            {
+                ctx.Response.Redirect("/swagger/"); //可以支持虚拟路径或者index.html这类起始页.
+                return Task.FromResult(0);
+            });
         }
     }
 }
