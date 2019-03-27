@@ -8,7 +8,7 @@ using NETCore.DB;
 namespace NETCoreTest.Controllers
 {
     /// <summary>
-    /// 基础测试类
+    /// 基础测试 控制器
     /// </summary>
     [Route("api/[controller]/[action]")]
     [ApiController]

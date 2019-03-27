@@ -9,7 +9,7 @@ using NETCoreTest.Enties.wmw;
 namespace NETCoreTest.Controllers
 {
     /// <summary>
-    /// 国家控制器
+    /// 国家业务 控制器
     /// </summary>
     [Route("api/[controller]/[action]")]
     [ApiController]
@@ -23,9 +23,9 @@ namespace NETCoreTest.Controllers
         /// <summary>
         /// 构造函数
         /// </summary>
-        public CountryController()
+        public CountryController(countryManager countrydb)
         {
-            _countrydb = new countryManager();
+            _countrydb = countrydb;
         }
 
         /// <summary>
@@ -39,6 +39,17 @@ namespace NETCoreTest.Controllers
             var lst = _countrydb.GetList().Where(p => p.Name == _inputName)
                 .ToList();
             return lst;
+        }
+
+        /// <summary>
+        /// 异常测试
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<string> GetTestStringValue()
+        {
+            //return "Hello .NET Core";
+            throw new Exception("异常啦。。。");
         }
 
     }
